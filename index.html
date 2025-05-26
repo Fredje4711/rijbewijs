@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rijbewijs & Diabetes | Diabetes Liga Midden-Limburg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #23a9e4;
+            --light-blue: #e0f2f7; /* Lighter shade of primary blue */
+            --dark-blue: #1c87b7; /* Darker shade for accents */
+            --text-dark: #333;
+            --text-light: #f9f9f9;
+            --bg-light: #ffffff;
+            --bg-gradient: linear-gradient(135deg, var(--primary-blue), #5ac2ef);
+            --button-gradient: linear-gradient(45deg, var(--primary-blue), var(--dark-blue));
+            --section-bg-even: #f8f8f8; /* Simplified background for even sections */
+            --section-bg-faq: #f2faff; /* Simplified background for FAQ */
+        }
+
+        /* Algemene styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.5;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-blue);
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.2rem; text-align: center; color: var(--text-light); margin-bottom: 0.5rem; }
+        h2 { font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem; }
+        h3 { font-size: 1.4rem; color: var(--primary-blue); margin-top: 1.5rem; }
+
+        p { margin-bottom: 0.8rem; }
+
+        a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--dark-blue);
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Header / Hero Section */
+        .hero-section {
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            padding: 40px 15px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .hero-section p {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            opacity: 0.9;
+        }
+
+        /* Call to Action Button */
+        .btn {
+            display: inline-block;
+            background: var(--button-gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            font-size: 0.9rem;
+            margin: 5px; /* Added margin for consistency with buttons */
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+        }
+
+        /* Secties */
+        section {
+            padding: 30px 0;
+            margin-bottom: 0;
+            background-color: var(--bg-light);
+            border-bottom: 1px solid #eee;
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--section-bg-even);
+        }
+
+        .intro-section {
+            padding-bottom: 30px;
+        }
+        .intro-section p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        .section-title h2 {
+            margin-bottom: 10px;
+        }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        /* Lijsten */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0.8rem;
+        }
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+        ul li::before {
+            content: '✓';
+            color: var(--primary-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-size: 1rem;
+        }
+
+        .summary-box {
+            background-color: var(--light-blue);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Interactieve Stappen sectie */
+        .interactive-steps-section {
+            padding: 30px 0;
+            background-color: var(--bg-light);
+            border-bottom: 1px solid #eee;
+        }
+
+        .select-situation-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .select-situation-box label {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+        .select-situation-box select {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 2px solid var(--primary-blue);
+            background-color: white;
+            font-size: 1rem;
+            color: var(--text-dark);
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2323a9e4%22%20d%3D%22M287%2069.9a14.6%2014.6%200%200%200%20-21.7%200L146.2%20190.1%2027.1%2069.9a14.6%2014.6%200%200%200%20-21.7%200%2014.6%2014.6%200%200%200%200%2021.7l130.8%20130.8a14.6%2014.6%200%200%200%2021.7%200L287%2091.6a14.6%2014.6%200%200%200%200%20-21.7z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 12px;
+            cursor: pointer;
+        }
+
+        .steps-content {
+            border: 1px solid var(--light-blue);
+            border-radius: 10px;
+            padding: 20px;
+            background-color: var(--bg-light);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .steps-content h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+        .steps-content ol {
+            list-style: decimal;
+            padding-left: 20px;
+            margin: 0;
+        }
+        .steps-content ol li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            padding-left: 0;
+        }
+        .steps-content ol li::before {
+            content: counter(item) ". ";
+            counter-increment: item;
+            color: var(--dark-blue);
+            font-weight: bold;
+            position: static;
+            left: auto;
+            top: auto;
+        }
+        .steps-content p {
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0;
+        }
+        .steps-content .tip {
+            font-style: italic;
+            color: var(--primary-blue);
+            margin-top: 10px;
+        }
+
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--section-bg-faq);
+            padding-bottom: 40px;
+        }
+
+        .faq-item {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.06);
+        }
+
+        .faq-question {
+            display: block;
+            width: 100%;
+            text-align: left;
+            border: none;
+            padding: 15px;
+            font-size: 1rem;
+            background-color: var(--light-blue);
+            color: var(--dark-blue);
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 8px;
+        }
+        .faq-question:hover {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .faq-item.active .faq-question::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            background-color: var(--bg-light);
+            font-size: 0.9rem;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 15px;
+        }
+        .faq-answer p { margin-bottom: 0; }
+
+
+        /* Call to Action onderaan */
+        .cta-bottom-section {
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            padding: 40px 15px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .cta-bottom-section h2 {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        .cta-bottom-section .btn {
+            background: var(--dark-blue);
+            margin: 5px;
+            font-size: 0.95rem;
+        }
+        .cta-bottom-section .btn:hover {
+            background: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Social Links in CTA */
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            background-color: rgba(255,255,255,0.1);
+        }
+        .social-links a:hover {
+            background-color: rgba(255,255,255,0.2);
+            border-color: var(--text-light);
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            fill: var(--text-light);
+            transition: fill 0.3s ease;
+        }
+        .social-links a:hover svg {
+            fill: var(--text-light);
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 20px 15px;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        footer p {
+            margin-bottom: 5px;
+        }
+        footer a {
+            color: var(--primary-blue);
+            margin: 0 8px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+            h3 { font-size: 1.2rem; margin-top: 1rem; }
+            p { font-size: 0.9rem; margin-bottom: 0.6rem; }
+            .btn { padding: 9px 18px; font-size: 0.85rem; }
+            .container { padding: 10px; }
+            section { padding: 25px 0; }
+            .summary-box { padding: 15px; font-size: 0.9rem; }
+            ul li { font-size: 0.9rem; padding-left: 18px; }
+            ul li::before { font-size: 0.9rem; }
+            .faq-question { padding: 12px; font-size: 0.95rem; }
+            .faq-question::after { font-size: 1.1rem; right: 12px; }
+            .faq-answer { padding: 0 12px; font-size: 0.85rem; }
+            .faq-item.active .faq-answer { padding: 12px; }
+            .hero-section { padding: 30px 10px; }
+            .cta-bottom-section { padding: 30px 10px; }
+
+            .select-situation-box select {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            .steps-content {
+                padding: 15px;
+            }
+            .steps-content h3 {
+                font-size: 1.3rem;
+            }
+            .steps-content ol li {
+                font-size: 0.9rem;
+            }
+            .steps-content p {
+                font-size: 0.85rem;
+            }
+            .social-links {
+                gap: 10px;
+            }
+            .social-links a {
+                padding: 6px 10px;
+                font-size: 0.85rem;
+            }
+            .social-links svg {
+                width: 16px;
+                height: 16px;
+                margin-right: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.3rem; }
+            h3 { font-size: 1.1rem; }
+            .btn {
+                display: block;
+                width: calc(100% - 20px);
+                margin: 5px auto;
+            }
+            .cta-bottom-section .btn {
+                width: auto;
+                display: inline-block;
+            }
+            .hero-section p { font-size: 0.85rem; }
+            .summary-box { font-size: 0.85rem; }
+            ul li { font-size: 0.85rem; }
+            .faq-question { font-size: 0.9rem; }
+            .faq-answer { font-size: 0.8rem; }
+            footer { font-size: 0.75rem; }
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            .social-links a {
+                width: 90%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="hero-content container">
+            <h1>Veilig de Weg Op met Diabetes</h1>
+            <p>Jouw gids over de Belgische wetgeving rond "Rijbewijs en Diabetes" – helder, compact en in mensentaal.</p>
+            <a href="#interactive-steps" class="btn">Toon Jouw Stappenplan</a>
+        </div>
+    </header>
+
+	<section class="intro-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Waarom deze Wetgeving?</h2>
+            </div>
+            <p>Diabetes beïnvloedt de bloedsuikerspiegel, die bij een hypo te laag of bij een hyper te hoog kan worden, wat kan leiden tot problemen met concentratie, wazig zien of zelfs tijdelijk niet goed weten wat je doet. Langdurige diabetes kan ook complicaties aan ogen, zenuwstelsel of hart veroorzaken. De Belgische wetgeving beschermt jou en andere weggebruikers door te garanderen dat je veilig kunt blijven rijden. Diabetes is geen belemmering, maar de wet zorgt voor jouw medische geschiktheid en veiligheid op de weg.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Korte Samenvatting</h2>
+            </div>
+            <div class="summary-box">
+                <p>Als je diabetes hebt, ben je <strong>wettelijk verplicht</strong> een aangepast rijbewijs aan te vragen. Dit geldt voor iedereen met diabetes (behalve zwangerschapsdiabetes).</p>
+                <p>Het rijbewijs heeft een beperkte geldigheidsduur: <strong>meestal 5 jaar voor privaat vervoer (Groep 1)</strong> en <strong>3 jaar voor professioneel vervoer (Groep 2)</strong>. Het moet tijdig vernieuwd worden.</p>
+                <p>Het proces omvat een medische keuring door je arts en een aanvraag bij je gemeente. Informeer altijd je autoverzekeraar; doe je dit niet, dan kan je polis ongeldig worden.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Voor Wie is het?</h2>
+            </div>
+            <p><strong>Iedereen met diabetes</strong> is wettelijk verplicht een aangepast rijbewijs te hebben, ongeacht behandeling. Uitzondering: zwangerschapsdiabetes.</p>
+            <p>Er zijn twee groepen:</p>
+            <ul>
+                <li><strong>Groep 1 (Privaat vervoer)</strong>: Personenauto's, motoren (AM, A, B, G).</li>
+                <li><strong>Groep 2 (Professioneel vervoer)</strong>: Vrachtwagens, bussen, bezoldigd vervoer (C, D, etc.).</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Basisvoorwaarden voor Rijgeschiktheid</h2>
+            </div>
+            <p>Om als diabeet rijgeschikt verklaard te worden, moet je aan de volgende algemene voorwaarden voldoen:</p>
+            <ul>
+                <li><strong>Stabiele diabetesregeling:</strong> Je bloedsuikerwaarden zijn onder controle.</li>
+                <li><strong>Regelmatige medische controles:</strong> Je bezoekt je arts consistent voor opvolging.</li>
+                <li><strong>Inzicht in je aandoening:</strong> Je begrijpt diabetes en de impact op je rijvaardigheid.</li>
+                <li><strong>Hypo/Hyper-kennis:</strong> Je herkent de symptomen van lage en hoge bloedsuiker en weet hoe te handelen.</li>
+                <li><strong>Strikte therapietrouw:</strong> Je volgt je voorgeschreven behandeling nauwgezet.</li>
+                <li><strong>Diabeteseducatie:</strong> Je hebt voorlichting over diabetes gevolgd om je ziekte beter te managen.</li>
+            </ul>
+            <p class="tip"><em>Deze punten worden door je behandelend arts beoordeeld tijdens de medische keuring voor je rijgeschiktheidsattest. De Diabetes Liga Afdeling Midden-Limburg en je arts kunnen je hierbij begeleiden.</em></p>
+        </div>
+    </section>
+
+    <section id="interactive-steps" class="interactive-steps-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mijn Persoonlijke Stappenplan</h2>
+            </div>
+            <div class="select-situation-box">
+                <label for="situation-select">Ik bevind me in de volgende situatie:</label>
+                <select id="situation-select">
+                    <option value="">-- Kies jouw situatie --</option>
+                    <option value="nieuw_gediagnosticeerd_geen_rijbewijs">Nieuw gediagnosticeerd & nog geen rijbewijs</option>
+                    <option value="nieuw_gediagnosticeerd_wel_rijbewijs">Nieuw gediagnosticeerd & heeft al een rijbewijs</option>
+                    <option value="bestaand_rijbewijs_verlengen">Bestaand aangepast rijbewijs verlengen</option>
+                    <option value="professioneel_rijbewijs">Aanvraag/verlenging Professioneel Rijbewijs (Groep 2)</option>
+                </select>
+            </div>
+
+            <div id="dynamic-steps-container" class="steps-content">
+                <p style="text-align: center; color: #666;">Kies een situatie uit de keuzelijst hierboven om jouw persoonlijke stappenplan te zien.</p>
+            </div>
+        </div>
+    </section>
+
+	    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Duurtijd en Kostprijs</h2>
+            </div>
+            <h3>Geldigheidsduur:</h3>
+            <ul>
+                <li><strong>Groep 1 (Privaat)</strong>: Max. 5 jaar geldig.</li>
+                <li><strong>Groep 2 (Professioneel)</strong>: Max. 3 jaar geldig.</li>
+            </ul>
+
+            <h3>Kostprijs:</h3>
+            <p>Een aangepast rijbewijs aanvragen brengt de volgende kosten met zich mee:</p>
+            <ul>
+                <li><strong>Eerste aanvraag/aanpassing:</strong> Er is een **eenmalige administratieve kost** bij de gemeente (dit bedrag verschilt per gemeente, vaak tussen €20 en €30).</li>
+                <li><strong>Vernieuwing van het medisch rijgeschiktheidsattest:</strong> De keuring door je arts en het invullen van het attest is **kosteloos**.</li>
+                <li><strong>Administratieve verlenging bij de gemeente:</strong>
+                    <ul>
+                        <li>Voor een **Groep 1 (Privaat) rijbewijs** is de verlenging doorgaans **kosteloos**.</li>
+                        <li>Voor een **Groep 2 (Professioneel) rijbewijs** kan de verlenging **wel een administratieve kost** met zich meebrengen bij de gemeente.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="tip"><em>Er zijn ook kosten verbonden aan diefstal, verlies of de overstap van een papieren naar een elektronisch rijbewijs.</em></p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>10 Veelgestelde Vragen (FAQ)</h2>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">1. Verzekeraar informeren?</button>
+                <div class="faq-answer">
+                    <p>Ja, verplicht. Anders kan je polis ongeldig zijn. De premie wordt niet verhoogd en je mag niet geweigerd worden.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">2. Wat als ik geen aangepast rijbewijs aanvraag?</button>
+                <div class="faq-answer">
+                    <p>Geen geldig rijbewijs = recht om te sturen vervalt. Gevolg: aansprakelijkheid bij ongeval, geen verzekering, boete/gevangenisstraf.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">3. Rijbewijs verloopt, wat nu?</button>
+                <div class="faq-answer">
+                    <p>Houd zelf de datum in de gaten. Vraag tijdig een nieuw attest aan bij je arts voor verlenging.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">4. Geldig in het buitenland?</button>
+                <div class="faq-answer">
+                    <p>Binnen EU geldig. Buiten EU heb je een aangepast internationaal rijbewijs nodig (max. 3 jaar geldig, aanvragen gemeentehuis).</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">5. Wat bij een hypo tijdens het rijden?</button>
+                <div class="faq-answer">
+                    <p>Veilig aan de kant, snelle suikers innemen. Pas vertrekken bij bloedsuiker ≥ 90 mg/dl en na minstens 30 minuten wachten.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">6. Veilige bloedsuikerwaarde om te rijden?</button>
+                <div class="faq-answer">
+                    <p>Rijd enkel met een bloedsuikerwaarde van 90 mg/dl of hoger. Bespreek je persoonlijke grens met je arts.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">7. Meettoestel altijd bij me in de auto?</button>
+                <div class="faq-answer">
+                    <p>Ja, zorg dat je meettoestel altijd in de auto is. Bespreek meetfrequentie met je arts.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">8. Diabetescomplicaties beïnvloeden rijvaardigheid?</button>
+                <div class="faq-answer">
+                    <p>Bij complicaties aan ogen, zenuwstelsel, hart/bloedvaten: specialist raadplegen voor advies rijgeschiktheid. Advies meenemen naar je arts.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">9. Wat is CARA?</button>
+                <div class="faq-answer">
+                    <p>CARA (Vias institute) beoordeelt rijgeschiktheid bij aandoeningen van bewegings- of zenuwstelsel (incl. amputaties) en adviseert over voertuigaanpassingen. Je arts kan je doorverwijzen.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">10. Beroep instellen bij niet rijgeschikt?</button>
+                <div class="faq-answer">
+                    <p>Ja, binnen tien werkdagen na de beslissing beroep instellen via een aangetekend schrijven. Je dient dan zelf een geneesheer aan te wijzen die je zal bijstaan tijdens de procedure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-bottom-section">
+        <div class="container">
+            <h2>Word Lid van de Diabetes Liga!</h2>
+            <p>De Diabetes Liga Afdeling Midden-Limburg biedt info, ondersteuning en activiteiten. Word lid voor toegang tot ons magazine, kortingen, infosessies en activiteiten. Samen sterker!</p>
+            <div>
+                <a href="https://www.diabetes.be/word-lid" target="_blank" class="btn">Word Lid!</a>
+                <a href="mailto:midden.limburg@diabetes.be" class="btn">Neem Contact Op</a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.dlml.be" target="_blank">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM4 12C4 11.23 4.12 10.49 4.34 9.77L9.77 4.34C10.49 4.12 11.23 4 12 4C17.04 4 21 7.96 21 12C21 12.77 20.88 13.51 20.66 14.23L15.23 19.66C14.51 19.88 13.77 20 13 20C7.96 20 4 16.04 4 12ZM12 6C8.68 6 6 8.68 6 12C6 15.32 8.68 18 12 18C15.32 18 18 15.32 18 12C18 8.68 15.32 6 12 6Z" fill="currentColor"/>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                    </svg>
+                    <span>www.dlml.be</span>
+                </a>
+                <a href="mailto:midden.limburg@diabetes.be">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z" fill="currentColor"/>
+                    </svg>
+                    <span>E-mail</span>
+                </a>
+                <a href="https://www.facebook.com/p/Diabetes-Liga-Midden-Limburg-100091325418693/?locale=nl_NL" target="_blank">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM17.5 7.5H15.75C14.07 7.5 13.5 8.17 13.5 9.42V11H17L16.5 14H13.5V20H10.5V14H8V11H10.5V9.125C10.5 7.187 11.75 6 14.25 6H17.5V7.5Z" fill="currentColor"/>
+                    </svg>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/diabetes_liga_midden_limburg/" target="_blank">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C9.116 2 8.788 2.01 7.703 2.05C6.618 2.09 5.86 2.276 5.251 2.502C4.385 2.827 3.653 3.328 2.99 3.991C2.328 4.654 1.827 5.385 1.502 6.251C1.276 6.86 1.09 7.618 1.05 8.703C1.01 9.788 1 10.116 1 12C1 14.884 1.01 15.862 1.05 16.297C1.09 17.382 1.276 18.14 1.502 18.749C1.827 19.615 2.328 20.347 2.99 21.01C3.653 21.672 4.385 22.173 5.251 22.498C5.86 22.724 6.618 22.91 7.703 22.95C8.788 22.99 9.116 23 12 23C14.884 23 15.862 22.99 16.297 22.95C17.382 22.91 18.14 22.724 18.749 22.498C19.615 22.173 20.347 21.672 21.01 21.01C21.672 20.347 22.173 19.615 22.498 18.749C22.724 18.14 22.91 17.382 22.95 16.297C22.99 15.862 23 14.884 23 12C23 9.116 22.99 8.788 22.95 7.703C22.91 6.618 22.724 5.86 22.498 5.251C22.173 4.385 21.672 3.653 21.01 2.99C20.347 2.328 19.615 1.827 18.749 1.502C18.14 1.276 17.382 1.09 16.297 1.05C15.862 1.01 14.884 1 12 1ZM12 4C14.73 4 15.06 4.01 16.03 4.05C16.89 4.09 17.34 4.22 17.68 4.35C18.12 4.51 18.43 4.75 18.67 5C18.91 5.24 19.15 5.55 19.31 5.99C19.44 6.33 19.57 6.78 19.61 7.64C19.65 8.61 19.66 8.94 19.66 12C19.66 15.06 19.65 15.39 19.61 16.36C19.57 17.22 19.44 17.67 19.31 18.01C19.15 18.45 18.91 18.76 18.67 19C18.43 19.24 18.12 19.48 17.68 19.64C17.34 19.77 16.89 19.9 16.03 19.94C15.06 19.98 14.73 19.99 12 19.99C9.27 19.99 8.94 19.98 7.97 19.94C7.11 19.9 6.66 19.77 6.32 19.64C5.88 19.48 5.57 19.24 5.33 19C5.09 18.76 4.85 18.45 4.69 18.01C4.56 17.67 4.43 17.22 4.39 16.36C4.35 15.39 4.34 15.06 4.34 12C4.34 8.94 4.35 8.61 4.39 7.64C4.43 6.78 4.56 6.33 4.69 5.99C4.85 5.55 5.09 5.24 5.33 5C5.57 4.76 5.88 4.52 6.32 4.36C6.66 4.23 7.11 4.1 7.97 4.06C8.94 4.02 9.27 4.01 12 4ZM12 6.81C9.69 6.81 7.81 8.69 7.81 11C7.81 13.31 9.69 15.19 12 15.19C14.31 15.19 16.19 13.31 16.19 11C16.19 8.69 14.31 6.81 12 6.81ZM12 8.81C13.2 8.81 14.19 9.8 14.19 11C14.19 12.2 13.2 13.19 12 13.19C10.8 13.19 9.81 12.2 9.81 11C9.81 9.8 10.8 8.81 12 8.81ZM18.49 5.48C18.49 4.97 18.07 4.55 17.56 4.55C17.05 4.55 16.63 4.97 16.63 5.48C16.63 5.99 17.05 6.41 17.56 6.41C18.07 6.41 18.49 5.99 18.49 5.48Z" fill="currentColor"/>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.youtube.com/@Diabetesligamiddenlimburg" target="_blank">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.58 7.1C21.35 6.32 20.73 5.67 19.94 5.44C18.17 4.93 12 4.93 12 4.93C12 4.93 5.83 4.93 4.06 5.44C3.27 5.67 2.65 6.32 2.42 7.1C1.91 8.87 1.91 12 1.91 12C1.91 12 1.91 15.13 2.42 16.9C2.65 17.68 3.27 18.33 4.06 18.56C5.83 19.07 12 19.07 12 19.07C12 19.07 18.17 19.07 19.94 18.56C20.73 18.33 21.35 17.68 21.58 16.9C22.09 15.13 22.09 12 22.09 12C22.09 12 22.09 8.87 21.58 7.1ZM9.95 15.14V8.86L15.22 12L9.95 15.14Z" fill="currentColor"/>
+                    </svg>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Diabetes Liga Afdeling Midden-Limburg. Alle rechten voorbehouden.</p>
+            <p>
+                <a href="https://www.diabetes.be/privacy" target="_blank">Privacybeleid</a> |
+                <a href="https://www.diabetes.be/disclaimer" target="_blank">Disclaimer</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Data voor de stappenplannen per situatie
+            const situationSteps = {
+                "nieuw_gediagnosticeerd_geen_rijbewijs": {
+                    title: "Stappenplan: Nieuw gediagnosticeerd & nog geen rijbewijs",
+                    steps: [
+                        { heading: "1. Leer je diabetes kennen (educatie)", text: "Volg diabeteseducatie om je aandoening en de impact op je rijvaardigheid te begrijpen. Dit is cruciaal voor jouw veiligheid en die van anderen." },
+                        { heading: "2. Rijgeschiktheidsattest (Groep 1) laten invullen", text: "Je behandelend arts (huisarts of endocrinoloog) vult het officiële rijgeschiktheidsattest in, gebaseerd op je medische situatie. Zorg dat je aan de <strong>algemene voorwaarden</strong> voldoet (zie sectie hierboven)." },
+                        { heading: "3. Aanvraag voorlopig rijbewijs bij gemeente", text: "Nadat je bent geslaagd voor je theoretisch examen, vraag je een voorlopig rijbewijs aan bij de dienst bevolking van je gemeente. Neem je ingevulde rijgeschiktheidsattest mee." },
+                        { heading: "4. Na slagen examen, aanvraag definitief rijbewijs", text: "Na het succesvol afleggen van je praktisch rijexamen, ga je opnieuw naar je gemeentehuis met je rijgeschiktheidsattest om je definitieve aangepaste rijbewijs aan te vragen." }
+                    ],
+                    tip: "<strong>Belangrijk:</strong> Zorg ervoor dat je alle documenten, inclusief het rijgeschiktheidsattest, bij de hand hebt bij elke aanvraag bij de gemeente."
+                },
+                "nieuw_gediagnosticeerd_wel_rijbewijs": {
+                    title: "Stappenplan: Nieuw gediagnosticeerd & heeft al een rijbewijs",
+                    steps: [
+                        { heading: "1. Binnen 4 werkdagen arts bezoeken", text: "Je bent wettelijk verplicht om binnen vier werkdagen na de diagnose je arts te bezoeken voor een rijgeschiktheidsattest. Je oude rijbewijs is na deze termijn niet meer geldig!" },
+                        { heading: "2. Rijgeschiktheidsattest (Groep 1) laten invullen", text: "Je behandelend arts (huisarts of endocrinoloog) vult het officiële rijgeschiktheidsattest in, gebaseerd op je medische situatie. Zorg dat je aan de <strong>algemene voorwaarden</strong> voldoet (zie sectie hierboven)." },
+                        { heading: "3. Rijbewijs aanpassen bij gemeentehuis", text: "Ga met het ingevulde attest, je huidige rijbewijs en identiteitskaart naar de dienst bevolking van je gemeente om je rijbewijs te laten aanpassen naar een versie met beperkte geldigheidsduur." },
+                        { heading: "4. Autoverzekeraar informeren", text: "Licht je autoverzekeraar zo snel mogelijk in over je diabetes en je aangepaste rijbewijs. Dit is wettelijk verplicht en je premie zal hierdoor niet stijgen." }
+                    ],
+                    tip: "<strong>Niet vergeten:</strong> De wettelijke termijn van vier werkdagen is kort. Handel snel om problemen te voorkomen!"
+                },
+                "bestaand_rijbewijs_verlengen": {
+                    title: "Stappenplan: Bestaand aangepast rijbewijs verlengen",
+                    steps: [
+                        { heading: "1. Houd de vervaldatum in de gaten", text: "De geldigheidsduur van je aangepaste rijbewijs is beperkt (meestal 5 jaar Groep 1, 3 jaar Groep 2). Je arts is niet verplicht je te herinneren, dus noteer de datum zelf!" },
+                        { heading: "2. Nieuw rijgeschiktheidsattest aanvragen", text: "Vraag ruim op tijd een nieuw rijgeschiktheidsattest aan bij je behandelend arts (Groep 1) of arbeidsgeneesheer (Groep 2). Zorg dat je medisch nog steeds aan de <strong>algemene voorwaarden</strong> voldoet (zie sectie hierboven)." },
+                        { heading: "3. Rijbewijs verlengen bij gemeentehuis", text: "Ga met het nieuwe rijgeschiktheidsattest, je huidige rijbewijs en identiteitskaart naar de dienst bevolking van je gemeente om de beperkte geldigheidsduur te laten verlengen." },
+                        { heading: "4. Verzekeraar (opnieuw) informeren (optioneel, maar aanbevolen)", text: "Hoewel je verzekeraar al op de hoogte is van je diabetes, kan het geen kwaad om bij een verlenging te controleren of ze op de hoogte zijn van de nieuwe vervaldatum van je rijbewijs." }
+                    ],
+                    tip: "<strong>Proactief zijn loont:</strong> Begin ruim op tijd met de verlengingsprocedure om te voorkomen dat je rijbewijs verloopt."
+                },
+                "professioneel_rijbewijs": {
+                    title: "Stappenplan: Aanvraag/verlenging Professioneel Rijbewijs (Groep 2)",
+                    steps: [
+                        { heading: "1. Overleg met behandelend arts", text: "Bespreken met je huisarts of endocrinoloog is de eerste stap. Zij geven advies over je rijgeschiktheid voor Groep 2. Zorg dat je aan de <strong>algemene voorwaarden</strong> voldoet (zie sectie hierboven)." },
+                        { heading: "2. Oogonderzoek laten doen", text: "Voor Groep 2 is altijd een recent en grondig oogonderzoek vereist, uitgevoerd door een oogarts." },
+                        { heading: "3. Medische keuring door arbeidsgeneesheer", text: "Een arbeidsgeneesheer vult het officiële rijgeschiktheidsattest in voor Groep 2, rekening houdend met het advies van je behandelend arts en de resultaten van het oogonderzoek." },
+                        { heading: "4. Aanvraag/verlenging bij gemeentehuis", text: "Met het ingevulde Groep 2 rijgeschiktheidsattest, je huidige rijbewijs (indien van toepassing) en identiteitskaart ga je naar de dienst bevolking van je gemeente." },
+                        { heading: "5. Autoverzekeraar informeren", text: "Licht je autoverzekeraar in over je diabetes en je Groep 2 rijbewijs. Dit is wettelijk verplicht en essentieel voor de geldigheid van je polis." }
+                    ],
+                    tip: "<strong>Complexe procedure:</strong> De procedure voor een Groep 2 rijbewijs is uitgebreider. Begin hier tijdig mee en zorg dat je alle vereiste attesten en onderzoeken hebt."
+                }
+            };
+
+            const selectElement = document.getElementById('situation-select');
+            const dynamicStepsContainer = document.getElementById('dynamic-steps-container');
+
+            function displaySteps(situationKey) {
+                if (!situationKey) {
+                    dynamicStepsContainer.innerHTML = '<p style="text-align: center; color: #666;">Kies een situatie uit de keuzelijst hierboven om jouw persoonlijke stappenplan te zien.</p>';
+                    return;
+                }
+
+                const data = situationSteps[situationKey];
+                if (!data) {
+                    dynamicStepsContainer.innerHTML = '<p style="text-align: center; color: red;">Er is een fout opgetreden. De geselecteerde situatie kan niet gevonden worden.</p>';
+                    return;
+                }
+
+                let htmlContent = `<h3>${data.title}</h3><ol>`;
+                data.steps.forEach(step => {
+                    htmlContent += `<li><strong>${step.heading}:</strong> ${step.text}</li>`;
+                });
+                htmlContent += `</ol><p class="tip">${data.tip}</p>`;
+                dynamicStepsContainer.innerHTML = htmlContent;
+            }
+
+            // Event listener voor de dropdown
+            if (selectElement) { // Check if element exists before adding listener
+                selectElement.addEventListener('change', (event) => {
+                    displaySteps(event.target.value);
+                });
+            } else {
+                console.error('Element with ID "situation-select" not found.');
+            }
+
+
+            // Initieel de instructie tonen bij laden van de pagina
+            displaySteps('');
+
+            // JavaScript voor FAQ functionaliteit
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const faqItem = button.closest('.faq-item');
+                    faqItem.classList.toggle('active');
+                    document.querySelectorAll('.faq-item.active').forEach(item => {
+                        if (item !== faqItem) {
+                            item.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        }); // End of DOMContentLoaded
+    </script>
+
+</body>
+</html>
