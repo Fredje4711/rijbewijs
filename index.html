@@ -387,21 +387,17 @@
         /* Social Links in CTA */
         .social-links {
             margin-top: 10px; /* Extreem compacter */
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px; /* Compacter */
+            display: flex; /* Maakt deze de flex-container */
+            flex-wrap: wrap; /* Zorgt dat items kunnen wrappen indien niet alles past */
+            justify-content: center; /* Centreert items horizontaal */
+            gap: 10px; /* Ruimte tussen de iconen */
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .social-links .social-row { /* Stijlen voor de rijen van social icons, indien gewenst in twee rijen */
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px; /* Ruimte tussen icons binnen een rij */
-            width: 100%; /* Zorgt dat de rijen de volle breedte pakken */
+        .social-links .social-row { /* Deze regel wordt gecombineerd met display: contents; */
+            display: contents; /* Zorgt dat de <a> tags zich gedragen als directe flex items van .social-links */
         }
         
         .social-links a {
@@ -410,7 +406,10 @@
             color: var(--text-light); /* Tekstkleur voor links */
             font-size: 0.85rem; /* Iets kleiner */
             text-decoration: none;
-            white-space: nowrap;
+            white-space: nowrap; /* Voorkomt tekst-wrap in de link */
+            flex-shrink: 0; /* Voorkomt dat de links zelf krimpen in een flex container */
+            flex-grow: 0; /* Voorkomt dat de links groeien */
+            flex-basis: auto; /* Laten de items hun natuurlijke breedte behouden */
         }
 
         .social-links a:hover {
@@ -419,13 +418,13 @@
         }
 
         .social-icon { /* Styling voor de <img> social iconen */
-            width: 28px !important; /* Forceert de breedte */
-            height: 28px !important; /* Forceert de hoogte */
+            width: 28px !important; /* Forceert de breedte naar 28px */
+            height: 28px !important; /* Forceert de hoogte naar 28px */
             display: inline-block;
             background-color: white; /* Witte achtergrond */
             border-radius: 45%; /* Maakt het rond */
             padding: 3px; /* Compacter */
-            margin-right: 6px; /* Compacter */
+            margin-right: 0; /* Geen marge rechts meer, want tekst is verborgen */
             flex-shrink: 0; /* Voorkomt dat het icoon krimpt */
             transition: background-color 0.3s ease;
         }
@@ -498,10 +497,10 @@
             .steps-content .tip { margin-top: 5px;}
 
             .social-links {
-                gap: 6px;
+                gap: 8px; /* Behoud kleine gap */
             }
-            .social-links .social-row {
-                gap: 6px;
+            .social-links .social-row { /* Deze regel wordt door display: contents genegeerd, maar blijft staan */
+                gap: 8px;
             }
             .social-links a {
                 font-size: 0.75rem;
@@ -510,7 +509,7 @@
                 width: 28px !important; /* Behoud 28px voor mobiel */
                 height: 28px !important; /* Behoud 28px voor mobiel */
                 padding: 3px;
-                margin-right: 5px;
+                margin-right: 0; /* Geen marge rechts meer */
             }
         }
 
@@ -521,7 +520,7 @@
             p { font-size: 0.75rem; margin-bottom: 0.3rem; }
             .btn {
                 display: block;
-                width: calc(100% - 16px);
+                width: calc(100% - 16px); /* Minder ruimte voor container padding */
                 margin: 3px auto;
                 padding: 5px 10px;
                 font-size: 0.7rem;
@@ -540,9 +539,9 @@
             footer { font-size: 0.65rem; padding: 5px 8px;}
             
             .social-links {
-                gap: 5px;
+                gap: 5px; /* Nog kleiner */
             }
-            .social-links .social-row {
+            .social-links .social-row { /* Deze regel wordt door display: contents genegeerd, maar blijft staan */
                 gap: 5px;
             }
             .social-links a {
@@ -552,7 +551,7 @@
                 width: 24px !important; /* Nog kleiner op zeer kleine schermen */
                 height: 24px !important; /* Nog kleiner op zeer kleine schermen */
                 padding: 2px;
-                margin-right: 4px;
+                margin-right: 0; /* Geen marge rechts meer */
             }
         }
     
@@ -600,7 +599,6 @@
                 <h2>Voor Wie is het?</h2>
             </div>
             <p><strong>Iedereen met diabetes</strong> is wettelijk verplicht een aangepast rijbewijs te hebben, ongeacht behandeling. Uitzondering: zwangerschapsdiabetes.</p>
-            <p>Er zijn twee groepen:</p>
             <ul>
                 <li><strong>Groep 1 (Privaat vervoer)</strong>: Personenauto's, motoren (AM, A, B, G).</li>
                 <li><strong>Groep 2 (Professioneel vervoer)</strong>: Vrachtwagens, bussen, bezoldigd vervoer (C, D, etc.).</li>
