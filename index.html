@@ -25,7 +25,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            line-height: 1.5;
+            line-height: 1.35; /* Nog compacter */
             color: var(--text-dark);
             background-color: var(--bg-light);
         }
@@ -37,15 +37,15 @@
         h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
             color: var(--dark-blue);
-            margin-bottom: 0.5rem; /* Compacte marge */
+            margin-bottom: 0.35rem; /* Nog compacter */
             line-height: 1.2;
         }
 
-        h1 { font-size: 2.2rem; text-align: center; color: var(--text-light); margin-bottom: 0.5rem; }
-        h2 { font-size: 1.8rem; text-align: center; margin-bottom: 1rem; /* Compactere marge */ }
-        h3 { font-size: 1.4rem; color: var(--primary-blue); margin-top: 1rem; /* Compactere marge */ }
+        h1 { font-size: 2rem; /* Iets kleiner */ text-align: center; color: var(--text-light); margin-bottom: 0.35rem; }
+        h2 { font-size: 1.6rem; /* Iets kleiner */ text-align: center; margin-bottom: 0.7rem; /* Nog compacter */ }
+        h3 { font-size: 1.3rem; /* Iets kleiner */ color: var(--primary-blue); margin-top: 0.7rem; /* Nog compacter */ }
 
-        p { margin-bottom: 0.5rem; /* Compacte marge */ }
+        p { margin-bottom: 0.35rem; /* Nog compacter */ }
 
         a {
             color: var(--primary-blue);
@@ -60,14 +60,14 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 10px; /* Nog compacter */
+            padding: 5px; /* Extreem compacter */
         }
 
         /* Header / Hero Section */
         .hero-section {
             background: var(--bg-gradient);
             color: var(--text-light);
-            padding: 15px 10px; /* Compacter: Minder padding boven/onder */
+            padding: 5px 10px; /* Extreem compacter zoals in screenshot */
             text-align: center;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
@@ -75,9 +75,9 @@
         }
 
         .hero-section p {
-            font-size: 1rem;
+            font-size: 0.9rem; /* Iets kleiner */
             max-width: 600px;
-            margin: 0 auto 10px auto; /* Compacter: Minder margin onder paragraaf */
+            margin: 0 auto 5px auto; /* Extreem compacter */
             opacity: 0.9;
         }
 
@@ -86,14 +86,14 @@
             display: inline-block;
             background: var(--button-gradient);
             color: white;
-            padding: 8px 15px; /* Compacter */
+            padding: 6px 10px; /* Nog compacter */
             border-radius: 30px;
             text-transform: uppercase;
             font-weight: 600;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            font-size: 0.85rem; /* Compacter */
-            margin: 3px; /* Compacter */
+            font-size: 0.8rem; /* Nog compacter */
+            margin: 2px; /* Nog compacter */
         }
         .btn:hover {
             transform: translateY(-2px);
@@ -103,7 +103,7 @@
 
         /* Secties */
         section {
-            padding: 15px 0; /* Compacter: Minder padding boven/onder per sectie */
+            padding: 8px 0; /* Extreem compacter */
             margin-bottom: 0;
             background-color: var(--bg-light);
             border-bottom: 1px solid #eee;
@@ -117,21 +117,21 @@
         }
 
         .intro-section {
-            padding-bottom: 15px; /* Consistent met secties */
+            padding-bottom: 8px; /* Consistent met secties */
         }
         .intro-section p {
-            font-size: 1rem;
+            font-size: 0.9rem; /* Iets kleiner */
             max-width: 700px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 10px; /* Compacter */
+            margin-bottom: 6px; /* Extreem compacter */
             position: relative;
         }
         .section-title h2 {
-            margin-bottom: 3px; /* Compacter */
+            margin-bottom: 2px; /* Extreem compacter */
         }
         .section-title h2::after {
             content: '';
@@ -139,8 +139,8 @@
             left: 50%;
             bottom: 0;
             transform: translateX(-50%);
-            width: 50px; /* Iets kortere lijn */
-            height: 2px; /* Dikkere lijn */
+            width: 30px; /* Kortere lijn */
+            height: 1px; /* Dunnere lijn */
             background-color: var(--primary-blue);
             border-radius: 1px;
         }
@@ -149,13 +149,13 @@
         ul {
             list-style: none;
             padding-left: 0;
-            margin-bottom: 0.5rem; /* Compacter */
+            margin-bottom: 0.3rem; /* Nog compacter */
         }
         ul li {
             position: relative;
-            padding-left: 18px; /* Compacter */
-            margin-bottom: 2px; /* Compacter */
-            font-size: 0.9rem; /* Iets kleiner */
+            padding-left: 14px; /* Nog compacter */
+            margin-bottom: 0px; /* Geen marge */
+            font-size: 0.8rem; /* Nog kleiner */
         }
         ul li::before {
             content: '✓';
@@ -163,18 +163,18 @@
             font-weight: bold;
             position: absolute;
             left: 0;
-            top: 0px; /* Aangepast voor strakker */
-            font-size: 0.95rem; /* Iets kleiner */
+            top: 0px;
+            font-size: 0.85rem; /* Iets kleiner */
         }
 
         .summary-box {
             background-color: var(--light-blue);
-            padding: 10px; /* Compacter */
+            padding: 6px; /* Compacter */
             border-radius: 10px;
-            margin-top: 10px; /* Compacter */
+            margin-top: 6px; /* Compacter */
             box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            font-size: 0.95rem; /* Iets kleiner */
-            line-height: 1.5; /* Iets compacter */
+            font-size: 0.85rem; /* Iets kleiner */
+            line-height: 1.3; /* Iets compacter */
         }
 
         /* Interactieve Stappen sectie */
@@ -182,37 +182,37 @@
             background: linear-gradient(to right, #e0f7ff, #ffffff);
             border: 2px solid var(--primary-blue);
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 15px 10px; /* Compacter */
+            padding: 10px 10px; /* Compacter */
             border-radius: 16px;
-            margin-top: 15px; /* Compacter */
-            margin-bottom: 15px; /* Compacter */
+            margin-top: 5px; /* Extreem compacter */
+            margin-bottom: 5px; /* Extreem compacter */
         }
 
         .interactive-steps-section h2 {
-            font-size: 1.8rem; /* Compacter */
+            font-size: 1.5rem; /* Iets kleiner */
             color: var(--dark-blue);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
             text-align: center;
-            margin-top: 0.5rem; /* Aangepaste margin */
+            margin-top: 0.35rem; /* Aangepaste margin */
         }
 
         .select-situation-box {
             text-align: center;
-            margin-bottom: 10px; /* Compacter */
+            margin-bottom: 6px; /* Compacter */
         }
         .select-situation-box label {
             display: block;
-            font-size: 1rem; /* Compacter */
-            margin-bottom: 5px;
+            font-size: 0.9rem; /* Compacter */
+            margin-bottom: 3px; /* Compacter */
             font-weight: 600;
             color: var(--dark-blue);
         }
         .select-situation-box select {
-            padding: 8px 10px; /* Compacter */
+            padding: 5px 8px; /* Nog compacter */
             border-radius: 8px;
             border: 2px solid var(--primary-blue);
             background-color: white;
-            font-size: 0.95rem; /* Compacter */
+            font-size: 0.85rem; /* Nog compacter */
             color: var(--text-dark);
             width: 100%;
             max-width: 400px;
@@ -222,8 +222,8 @@
             appearance: none;
             background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2323a9e4%22%20d%3D%22M287%2069.9a14.6%2014.6%200%200%200%20-21.7%200L146.2%20190.1%2027.1%2069.9a14.6%2014.6%200%200%200%20-21.7%200%2014.6%2014.6%200%200%200%200%2021.7l130.8%20130.8a14.6%2014.6%200%200%200%2021.7%200L287%2091.6a14.6%2014.6%200%200%200%200%20-21.7z%22%2F%3E%3C%2Fsvg%3E');
             background-repeat: no-repeat;
-            background-position: right 10px top 50%;
-            background-size: 12px;
+            background-position: right 6px top 50%; /* Compacter */
+            background-size: 9px; /* Kleiner */
             cursor: pointer;
         }
 
@@ -243,27 +243,27 @@
         /* Klasse toegevoegd door JS wanneer content geladen wordt */
         #dynamic-steps-container.show-content {
             display: block; /* Toon het vak wanneer er content is */
-            padding: 15px; /* Terugbrengen van padding */
-            border: 1px solid #cceeff; /* Terugbrengen van rand */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Terugbrengen van schaduw */
-            margin-top: 15px; /* Ruimte boven het vak wanneer het zichtbaar is */
+            padding: 10px; /* Compacter */
+            border: 1px solid #cceeff; /* Rand behouden */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Schaduw behouden */
+            margin-top: 10px; /* Ruimte boven het vak wanneer het zichtbaar is */
         }
 
         #dynamic-steps-container h3 {
             margin-top: 0;
-            margin-bottom: 0.8rem; /* Compacter */
+            margin-bottom: 0.6rem; /* Compacter */
             color: var(--primary-blue);
-            font-size: 1.4rem; /* Compacter */
+            font-size: 1.3rem; /* Compacter */
         }
         #dynamic-steps-container ol {
             list-style: decimal;
-            padding-left: 20px;
+            padding-left: 18px; /* Compacter */
             margin: 0;
         }
         #dynamic-steps-container ol li {
-            margin-bottom: 5px; /* Compacter */
-            font-size: 0.9rem; /* Compacter */
-            line-height: 1.4;
+            margin-bottom: 3px; /* Compacter */
+            font-size: 0.85rem; /* Compacter */
+            line-height: 1.3; /* Compacter */
             padding-left: 0;
         }
         #dynamic-steps-container ol li::before {
@@ -276,28 +276,28 @@
             top: auto;
         }
         #dynamic-steps-container p {
-            margin-top: 3px; /* Compacter */
-            font-size: 0.85rem; /* Compacter */
+            margin-top: 2px; /* Compacter */
+            font-size: 0.8rem; /* Compacter */
             color: #555;
             margin-bottom: 0;
         }
         #dynamic-steps-container .tip {
             font-style: italic;
             color: var(--primary-blue);
-            margin-top: 8px; /* Compacter */
+            margin-top: 6px; /* Compacter */
         }
 
 
         /* FAQ Section */
         .faq-section {
             background-color: var(--section-bg-faq);
-            padding-bottom: 15px; /* Compacter */
+            padding-bottom: 8px; /* Extreem compacter */
         }
 
         .faq-item {
             background-color: var(--bg-light);
             border-radius: 8px;
-            margin-bottom: 8px; /* Compacter */
+            margin-bottom: 6px; /* Compacter */
             box-shadow: 0 1px 5px rgba(0,0,0,0.06);
         }
 
@@ -306,8 +306,8 @@
             width: 100%;
             text-align: left;
             border: none;
-            padding: 12px 15px; /* Compacter */
-            font-size: 0.95rem; /* Compacter */
+            padding: 8px 10px; /* Compacter */
+            font-size: 0.85rem; /* Compacter */
             background-color: var(--light-blue);
             color: var(--dark-blue);
             font-weight: 600;
@@ -324,10 +324,10 @@
         .faq-question::after {
             content: '+';
             position: absolute;
-            right: 15px;
+            right: 10px; /* Compacter */
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.1rem; /* Compacter */
+            font-size: 0.9rem; /* Compacter */
             transition: transform 0.3s ease;
         }
 
@@ -340,19 +340,19 @@
         }
 
         .faq-answer {
-            padding: 0 15px; /* Compacter */
+            padding: 0 10px; /* Compacter */
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out, padding 0.4s ease-out;
             background-color: var(--bg-light);
-            font-size: 0.85rem; /* Compacter */
+            font-size: 0.75rem; /* Compacter */
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
         }
 
         .faq-item.active .faq-answer {
             max-height: 200px; /* Kan aangepast worden indien antwoorden langer zijn */
-            padding: 12px 15px; /* Compacter */
+            padding: 8px 10px; /* Compacter */
         }
         .faq-answer p { margin-bottom: 0; }
 
@@ -361,7 +361,7 @@
         .cta-bottom-section {
             background: var(--bg-gradient);
             color: var(--text-light);
-            padding: 20px 15px; /* Compacter */
+            padding: 15px 15px; /* Compacter */
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
@@ -369,12 +369,15 @@
         }
         .cta-bottom-section h2 {
             color: var(--text-light);
-            margin-bottom: 10px; /* Compacter */
+            margin-bottom: 8px; /* Compacter */
+        }
+        .cta-bottom-section p {
+            margin-bottom: 8px; /* Compacter */
         }
         .cta-bottom-section .btn {
             background: var(--dark-blue);
             margin: 3px; /* Compacter */
-            font-size: 0.9rem; /* Compacter */
+            font-size: 0.85rem; /* Compacter */
         }
         .cta-bottom-section .btn:hover {
             background: var(--primary-blue);
@@ -383,11 +386,11 @@
 
         /* Social Links in CTA */
         .social-links {
-            margin-top: 15px; /* Compacter */
+            margin-top: 10px; /* Extreem compacter */
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px; /* Compacter */
+            gap: 8px; /* Compacter */
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -397,7 +400,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px; /* Ruimte tussen icons binnen een rij */
+            gap: 8px; /* Ruimte tussen icons binnen een rij */
             width: 100%; /* Zorgt dat de rijen de volle breedte pakken */
         }
         
@@ -405,12 +408,9 @@
             display: flex;
             align-items: center;
             color: var(--text-light); /* Tekstkleur voor links */
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Iets kleiner */
             text-decoration: none;
             white-space: nowrap;
-            background: none; /* Verwijderd, zit nu op img */
-            border: none; /* Verwijderd, zit nu op img */
-            padding: 0; /* Verwijderd, zit nu op img */
         }
 
         .social-links a:hover {
@@ -419,13 +419,13 @@
         }
 
         .social-icon { /* Styling voor de <img> social iconen */
-            width: 36px;
-            height: 36px;
+            width: 28px !important; /* Forceert de breedte */
+            height: 28px !important; /* Forceert de hoogte */
             display: inline-block;
             background-color: white; /* Witte achtergrond */
             border-radius: 45%; /* Maakt het rond */
-            padding: 4px; /* Ruimte binnen de cirkel */
-            margin-right: 8px; /* Ruimte tussen icon en tekst */
+            padding: 3px; /* Compacter */
+            margin-right: 6px; /* Compacter */
             flex-shrink: 0; /* Voorkomt dat het icoon krimpt */
             transition: background-color 0.3s ease;
         }
@@ -433,20 +433,24 @@
             background-color: var(--light-blue); /* Hover effect voor de achtergrond van het icoon */
         }
 
+        .social-links a span { /* Verberg de tekstlabels */
+            display: none;
+        }
+
         /* Footer */
         footer {
             background-color: var(--text-dark);
             color: var(--text-light);
-            padding: 10px 15px; /* Compacter */
-            font-size: 0.75rem; /* Compacter */
+            padding: 8px 15px; /* Compacter */
+            font-size: 0.7rem; /* Nog compacter */
             text-align: center;
         }
         footer p {
-            margin-bottom: 3px; /* Compacter */
+            margin-bottom: 2px; /* Compacter */
         }
         footer a {
             color: var(--primary-blue);
-            margin: 0 5px; /* Compacter */
+            margin: 0 4px; /* Compacter */
         }
         footer a:hover {
             text-decoration: underline;
@@ -454,97 +458,101 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.5rem; margin-bottom: 0.8rem; }
-            h3 { font-size: 1.2rem; margin-top: 0.8rem; }
-            p { font-size: 0.85rem; margin-bottom: 0.5rem; }
-            .btn { padding: 8px 15px; font-size: 0.8rem; }
-            .container { padding: 8px; /* Nog compacter op kleine schermen */ }
-            section { padding: 15px 0; }
-            .summary-box { padding: 10px; font-size: 0.9rem; }
-            ul li { font-size: 0.85rem; padding-left: 16px; }
-            ul li::before { font-size: 0.9rem; }
-            .faq-question { padding: 10px 12px; font-size: 0.9rem; }
-            .faq-question::after { font-size: 1rem; right: 12px; }
-            .faq-answer { padding: 0 12px; font-size: 0.8rem; }
-            .faq-item.active .faq-answer { padding: 10px 12px; }
-            .hero-section { padding: 20px 10px; }
-            .cta-bottom-section { padding: 20px 10px; }
+            h1 { font-size: 1.7rem; }
+            h2 { font-size: 1.4rem; margin-bottom: 0.7rem; }
+            h3 { font-size: 1.1rem; margin-top: 0.7rem; }
+            p { font-size: 0.8rem; margin-bottom: 0.4rem; }
+            .btn { padding: 6px 12px; font-size: 0.75rem; }
+            .container { padding: 6px; /* Nog compacter op kleine schermen */ }
+            section { padding: 10px 0; }
+            .summary-box { padding: 8px; font-size: 0.85rem; margin-top: 6px;}
+            ul li { font-size: 0.8rem; padding-left: 14px; margin-bottom: 1px;}
+            ul li::before { font-size: 0.85rem; top: 0px;}
+            .faq-question { padding: 8px 10px; font-size: 0.85rem; }
+            .faq-question::after { font-size: 0.9rem; right: 10px; }
+            .faq-answer { padding: 0 10px; font-size: 0.75rem; }
+            .faq-item.active .faq-answer { padding: 8px 10px; }
+            .hero-section { padding: 10px 8px; }
+            .cta-bottom-section { padding: 15px 10px; }
 
             .select-situation-box select {
-                padding: 6px 8px;
-                font-size: 0.9rem;
-            }
-            .steps-content {
-                padding: 10px;
-            }
-            .steps-content h3 {
-                font-size: 1.2rem;
-            }
-            .steps-content ol li {
+                padding: 5px 6px;
                 font-size: 0.85rem;
             }
-            .steps-content p {
-                font-size: 0.8rem;
+            .steps-content {
+                padding: 8px;
+                margin-top: 8px;
             }
+            .steps-content h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+            .steps-content ol { padding-left: 16px;}
+            .steps-content ol li {
+                font-size: 0.8rem;
+                margin-bottom: 2px;
+            }
+            .steps-content p {
+                font-size: 0.75rem;
+            }
+            .steps-content .tip { margin-top: 5px;}
+
             .social-links {
-                gap: 8px;
+                gap: 6px;
             }
             .social-links .social-row {
-                gap: 8px;
+                gap: 6px;
             }
             .social-links a {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
             .social-icon {
-                width: 30px;
-                height: 30px;
+                width: 28px !important; /* Behoud 28px voor mobiel */
+                height: 28px !important; /* Behoud 28px voor mobiel */
                 padding: 3px;
-                margin-right: 6px;
+                margin-right: 5px;
             }
         }
 
         @media (max-width: 480px) {
-            h1 { font-size: 1.5rem; }
-            h2 { font-size: 1.2rem; }
-            h3 { font-size: 1rem; }
+            h1 { font-size: 1.3rem; }
+            h2 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+            h3 { font-size: 1rem; margin-top: 0.6rem; }
+            p { font-size: 0.75rem; margin-bottom: 0.3rem; }
             .btn {
                 display: block;
-                width: calc(100% - 16px); /* Minder ruimte voor container padding */
-                margin: 4px auto;
+                width: calc(100% - 16px);
+                margin: 3px auto;
+                padding: 5px 10px;
+                font-size: 0.7rem;
             }
             .cta-bottom-section .btn {
                 width: auto;
                 display: inline-block;
             }
-            .hero-section p { font-size: 0.85rem; }
-            .summary-box { font-size: 0.85rem; padding: 8px;}
-            ul li { font-size: 0.85rem; padding-left: 14px; }
-            .faq-question { font-size: 0.85rem; padding: 8px 10px;}
-            .faq-answer { font-size: 0.75rem; padding: 0 10px;}
-            .faq-item.active .faq-answer { padding: 8px 10px; }
-            footer { font-size: 0.7rem; padding: 8px 10px;}
+            .hero-section p { font-size: 0.8rem; margin-bottom: 5px;}
+            .summary-box { font-size: 0.8rem; padding: 6px; margin-top: 6px;}
+            ul li { font-size: 0.75rem; padding-left: 12px; margin-bottom: 0px;}
+            ul li::before { font-size: 0.8rem; top: 0px;}
+            .faq-question { font-size: 0.85rem; padding: 6px 8px;}
+            .faq-answer { font-size: 0.7rem; padding: 0 8px;}
+            .faq-item.active .faq-answer { padding: 6px 8px; }
+            footer { font-size: 0.65rem; padding: 5px 8px;}
             
             .social-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 6px;
+                gap: 5px;
             }
             .social-links .social-row {
-                flex-direction: row; /* Blijf naast elkaar voor 2 iconen */
-                gap: 6px;
-                width: auto;
+                gap: 5px;
             }
             .social-links a {
-                width: auto; /* Laten zich aanpassen aan content */
-                max-width: none;
-                justify-content: flex-start; /* Links uitlijnen */
+                font-size: 0.7rem;
             }
             .social-icon {
-                width: 26px;
-                height: 26px;
+                width: 24px !important; /* Nog kleiner op zeer kleine schermen */
+                height: 24px !important; /* Nog kleiner op zeer kleine schermen */
                 padding: 2px;
-                margin-right: 5px;
+                margin-right: 4px;
             }
         }
     
@@ -746,18 +754,22 @@
             </div>
 
             <div class="social-links">
+                <div class="social-row">
                     <a href="https://www.dlml.be" target="_blank" title="Website Diabetes Liga Midden-Limburg">
                         <img src="Wereldbol.png" alt="Website" class="social-icon"><span>Website</span>
                     </a>
                     <a href="https://www.facebook.com/p/Diabetes-Liga-Midden-Limburg-100091325418693/?locale=nl_NL" target="_blank" title="Facebook Diabetes Liga Midden-Limburg">
                         <img src="Facebook.png" alt="Facebook" class="social-icon"><span>Facebook</span>
                     </a>
+                </div>
+                <div class="social-row">
                     <a href="https://www.instagram.com/diabetes_liga_midden_limburg/" target="_blank" title="Instagram Diabetes Liga Midden-Limburg">
                         <img src="Instagram.png" alt="Instagram" class="social-icon"><span>Instagram</span>
                     </a>
                     <a href="https://www.youtube.com/@Diabetesligamiddenlimburg" target="_blank" title="YouTube Diabetes Liga Midden-Limburg">
                         <img src="YouTube.png" alt="YouTube" class="social-icon"><span>YouTube</span>
                     </a>
+                </div>
             </div>
         </div>
     </section>
@@ -820,16 +832,15 @@
 
             function displaySteps(situationKey) {
                 if (!situationKey) {
-                    // Maak de container leeg en verberg deze volledig wanneer geen situatie gekozen is
                     dynamicStepsContainer.innerHTML = '';
-                    dynamicStepsContainer.classList.remove('show-content'); // Verberg de box
+                    dynamicStepsContainer.classList.remove('show-content');
                     return;
                 }
 
                 const data = situationSteps[situationKey];
                 if (!data) {
                     dynamicStepsContainer.innerHTML = '<p style="text-align: center; color: red;">Er is een fout opgetreden. De geselecteerde situatie kan niet gevonden worden.</p>';
-                    dynamicStepsContainer.classList.add('show-content'); // Toon de box voor foutmelding
+                    dynamicStepsContainer.classList.add('show-content');
                     return;
                 }
 
@@ -839,10 +850,9 @@
                 });
                 htmlContent += `</ol><p class="tip">${data.tip}</p>`;
                 dynamicStepsContainer.innerHTML = htmlContent;
-                dynamicStepsContainer.classList.add('show-content'); // Toon de box met content
+                dynamicStepsContainer.classList.add('show-content');
             }
 
-            // Event listener voor de dropdown
             if (selectElement) {
                 selectElement.addEventListener('change', (event) => {
                     document.getElementById("interactive-steps").scrollIntoView({ behavior: "smooth" });
@@ -852,11 +862,8 @@
                 console.error('Element with ID "situation-select" not found.');
             }
 
+            displaySteps('');
 
-            // Initieel de container leeg maken en verbergen bij het laden van de pagina
-            displaySteps(''); // Deze zal nu de container leeg maken en verbergen via de aangepaste functie
-
-            // JavaScript voor FAQ functionaliteit
             document.querySelectorAll('.faq-question').forEach(button => {
                 button.addEventListener('click', () => {
                     const faqItem = button.closest('.faq-item');
@@ -868,7 +875,7 @@
                     });
                 });
             });
-        }); // End of DOMContentLoaded
+        });
     </script>
 
 </body>
