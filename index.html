@@ -390,7 +390,7 @@
             display: flex; /* Maakt deze de flex-container */
             flex-wrap: wrap; /* Zorgt dat items kunnen wrappen indien niet alles past */
             justify-content: center; /* Centreert items horizontaal */
-            gap: 10px; /* Ruimte tussen de iconen */
+            gap: 25px; /* VERHOOGD: Ruimte tussen de iconen - PAS DEZE AAN */
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -497,10 +497,10 @@
             .steps-content .tip { margin-top: 5px;}
 
             .social-links {
-                gap: 8px; /* Behoud kleine gap */
+                gap: 15px; /* Aangepaste gap voor tablet-weergave */
             }
             .social-links .social-row { /* Deze regel wordt door display: contents genegeerd, maar blijft staan */
-                gap: 8px;
+                gap: 15px;
             }
             .social-links a {
                 font-size: 0.75rem;
@@ -539,10 +539,10 @@
             footer { font-size: 0.65rem; padding: 5px 8px;}
             
             .social-links {
-                gap: 5px; /* Nog kleiner */
+                gap: 10px; /* Nog compacter op zeer kleine schermen, maar nog steeds spreiding */
             }
-            .social-links .social-row { /* Deze regel wordt door display: contents genegeerd, maar blijft staan */
-                gap: 5px;
+            .social-links .social-row {
+                gap: 10px; /* Consistent met hoofd gap */
             }
             .social-links a {
                 font-size: 0.7rem;
