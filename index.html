@@ -77,7 +77,7 @@
         .hero-section p {
             font-size: 1rem;
             max-width: 600px;
-            margin: 0 auto 10px auto; /* Compacter */
+            margin: 0 auto 10px auto; /* Compacter: Minder margin onder paragraaf */
             opacity: 0.9;
         }
 
@@ -193,7 +193,7 @@
             color: var(--dark-blue);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
             text-align: center;
-            margin-top: 0.5rem;
+            margin-top: 0.5rem; /* Aangepaste margin */
         }
 
         .select-situation-box {
@@ -229,11 +229,26 @@
 
         #dynamic-steps-container {
             background-color: #ffffff;
-            padding: 15px; /* Compacter */
-            border: 1px solid #cceeff;
+            padding: 0; /* Initieel geen padding */
+            border: none; /* Initieel geen rand */
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: none; /* Initieel geen schaduw */
+            min-height: 0; /* Zorgt dat het leeg is */
+            margin-top: 0; /* Geen extra ruimte boven leeg vak */
+            margin-bottom: 0; /* Geen extra ruimte onder leeg vak */
+            transition: all 0.3s ease-in-out; /* Smooth animatie */
+            display: none; /* Initieel verborgen */
         }
+        
+        /* Klasse toegevoegd door JS wanneer content geladen wordt */
+        #dynamic-steps-container.show-content {
+            display: block; /* Toon het vak wanneer er content is */
+            padding: 15px; /* Terugbrengen van padding */
+            border: 1px solid #cceeff; /* Terugbrengen van rand */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Terugbrengen van schaduw */
+            margin-top: 15px; /* Ruimte boven het vak wanneer het zichtbaar is */
+        }
+
         #dynamic-steps-container h3 {
             margin-top: 0;
             margin-bottom: 0.8rem; /* Compacter */
@@ -389,19 +404,26 @@
         .social-links a {
             display: flex;
             align-items: center;
-            color: var(--text-light);
+            color: var(--text-light); /* Tekstkleur voor links */
             font-size: 0.9rem;
             text-decoration: none;
             white-space: nowrap;
-            /* Geen padding hier, de padding zit op de .social-icon */
+            background: none; /* Verwijderd, zit nu op img */
+            border: none; /* Verwijderd, zit nu op img */
+            padding: 0; /* Verwijderd, zit nu op img */
+        }
+
+        .social-links a:hover {
+            color: var(--primary-blue); /* Hover effect voor tekst */
+            text-decoration: none;
         }
 
         .social-icon { /* Styling voor de <img> social iconen */
             width: 36px;
             height: 36px;
             display: inline-block;
-            background-color: white;
-            border-radius: 40%; /* Maakt het rond */
+            background-color: white; /* Witte achtergrond */
+            border-radius: 45%; /* Maakt het rond */
             padding: 4px; /* Ruimte binnen de cirkel */
             margin-right: 8px; /* Ruimte tussen icon en tekst */
             flex-shrink: 0; /* Voorkomt dat het icoon krimpt */
@@ -495,9 +517,9 @@
                 width: auto;
                 display: inline-block;
             }
-            .hero-section p { font-size: 0.8rem; }
-            .summary-box { font-size: 0.8rem; padding: 8px;}
-            ul li { font-size: 0.8rem; padding-left: 14px; }
+            .hero-section p { font-size: 0.85rem; }
+            .summary-box { font-size: 0.85rem; padding: 8px;}
+            ul li { font-size: 0.85rem; padding-left: 14px; }
             .faq-question { font-size: 0.85rem; padding: 8px 10px;}
             .faq-answer { font-size: 0.75rem; padding: 0 10px;}
             .faq-item.active .faq-answer { padding: 8px 10px; }
@@ -612,7 +634,7 @@
             </select>
         </div>
         <div id="dynamic-steps-container">
-            <p style="text-align: center; color: #666;">Kies een situatie uit de keuzelijst hierboven om jouw persoonlijke stappenplan te zien.</p>
+            <!-- De initiële tekst is nu volledig verwijderd uit de HTML. JavaScript zal deze div initieel leeg laten. -->
         </div>
     </div>
 </section>
@@ -724,7 +746,6 @@
             </div>
 
             <div class="social-links">
-                <div class="social-row">
                     <a href="https://www.dlml.be" target="_blank" title="Website Diabetes Liga Midden-Limburg">
                         <img src="Wereldbol.png" alt="Website" class="social-icon"><span>Website</span>
                     </a>
@@ -737,7 +758,6 @@
                     <a href="https://www.youtube.com/@Diabetesligamiddenlimburg" target="_blank" title="YouTube Diabetes Liga Midden-Limburg">
                         <img src="YouTube.png" alt="YouTube" class="social-icon"><span>YouTube</span>
                     </a>
-                </div>
             </div>
         </div>
     </section>
@@ -800,13 +820,16 @@
 
             function displaySteps(situationKey) {
                 if (!situationKey) {
-                    dynamicStepsContainer.innerHTML = '<p style="text-align: center; color: #666;">Kies een situatie uit de keuzelijst hierboven om jouw persoonlijke stappenplan te zien.</p>';
+                    // Maak de container leeg en verberg deze volledig wanneer geen situatie gekozen is
+                    dynamicStepsContainer.innerHTML = '';
+                    dynamicStepsContainer.classList.remove('show-content'); // Verberg de box
                     return;
                 }
 
                 const data = situationSteps[situationKey];
                 if (!data) {
                     dynamicStepsContainer.innerHTML = '<p style="text-align: center; color: red;">Er is een fout opgetreden. De geselecteerde situatie kan niet gevonden worden.</p>';
+                    dynamicStepsContainer.classList.add('show-content'); // Toon de box voor foutmelding
                     return;
                 }
 
@@ -816,6 +839,7 @@
                 });
                 htmlContent += `</ol><p class="tip">${data.tip}</p>`;
                 dynamicStepsContainer.innerHTML = htmlContent;
+                dynamicStepsContainer.classList.add('show-content'); // Toon de box met content
             }
 
             // Event listener voor de dropdown
@@ -829,8 +853,8 @@
             }
 
 
-            // Initieel de instructie tonen bij laden van de pagina
-            displaySteps('');
+            // Initieel de container leeg maken en verbergen bij het laden van de pagina
+            displaySteps(''); // Deze zal nu de container leeg maken en verbergen via de aangepaste functie
 
             // JavaScript voor FAQ functionaliteit
             document.querySelectorAll('.faq-question').forEach(button => {
