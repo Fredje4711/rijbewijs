@@ -366,15 +366,21 @@
             margin-right: auto;
         }
         .social-links a {
-            display: flex;
-            align-items: center;
-            color: var(--text-light);
-            font-size: 0.9rem;
-            padding: 3px 7px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 20px;
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-            background-color: rgba(255,255,255,0.1);
+           background: none;
+           border: none;
+           padding: 0;
+        }
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    margin: 5px;
+	background-color: white;
+    border-radius: 45%; /* optioneel, indien je een cirkel wilt */
+    padding: 1px;
+}
+
         }
         .social-links a:hover {
             background-color: rgba(255,255,255,0.2);
@@ -510,6 +516,40 @@
 h1, h2 {
     margin-top: 0.5rem;
 }
+/* Opvallende styling voor interactieve stappenplan */
+.interactive-steps-section {
+    background: linear-gradient(to right, #e0f7ff, #ffffff);
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 30px 15px;
+    border-radius: 16px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.interactive-steps-section h2 {
+    font-size: 2rem;
+    color: var(--dark-blue);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.select-situation-box {
+    margin-bottom: 25px;
+}
+
+#dynamic-steps-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #cceeff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 </style>
 </head>
@@ -577,27 +617,27 @@ h1, h2 {
         </div>
     </section>
 
-    <section id="interactive-steps" class="interactive-steps-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Mijn Persoonlijke Stappenplan</h2>
-            </div>
-            <div class="select-situation-box">
-                <label for="situation-select">Ik bevind me in de volgende situatie:</label>
-                <select id="situation-select">
-                    <option value="">-- Kies jouw situatie --</option>
-                    <option value="nieuw_gediagnosticeerd_geen_rijbewijs">Nieuw gediagnosticeerd & nog geen rijbewijs</option>
-                    <option value="nieuw_gediagnosticeerd_wel_rijbewijs">Nieuw gediagnosticeerd & heeft al een rijbewijs</option>
-                    <option value="bestaand_rijbewijs_verlengen">Bestaand aangepast rijbewijs verlengen</option>
-                    <option value="professioneel_rijbewijs">Aanvraag/verlenging Professioneel Rijbewijs (Groep 2)</option>
-                </select>
-            </div>
-
-            <div id="dynamic-steps-container" class="steps-content">
-                <p style="text-align: center; color: #666;">Kies een situatie uit de keuzelijst hierboven om jouw persoonlijke stappenplan te zien.</p>
-            </div>
+<section id="interactive-steps" class="interactive-steps-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>🚗 Mijn Persoonlijke Stappenplan</h2>
         </div>
-    </section>
+        <div class="select-situation-box">
+            <label for="situation-select">Ik bevind me in de volgende situatie:</label>
+            <select id="situation-select">
+                <option value="">-- Kies jouw situatie --</option>
+                <option value="nieuw_gediagnosticeerd_geen_rijbewijs">Nieuw gediagnosticeerd & nog geen rijbewijs</option>
+                <option value="nieuw_gediagnosticeerd_wel_rijbewijs">Nieuw gediagnosticeerd & heeft al een rijbewijs</option>
+                <option value="bestaand_rijbewijs_verlengen">Bestaand aangepast rijbewijs verlengen</option>
+                <option value="professioneel_rijbewijs">Aanvraag/verlenging Professioneel Rijbewijs (Groep 2)</option>
+            </select>
+        </div>
+        <div id="dynamic-steps-container">
+            <p style="text-align: center; color: #666;">Kies een situatie uit de keuzelijst hierboven om jouw persoonlijke stappenplan te zien.</p>
+        </div>
+    </div>
+</section>
+
 
 	    <section>
         <div class="container">
@@ -704,42 +744,27 @@ h1, h2 {
                 <a href="mailto:midden.limburg@diabetes.be" class="btn">Neem Contact Op</a>
             </div>
 
-            <div class="social-links">
-                <a href="https://www.dlml.be" target="_blank">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM4 12C4 11.23 4.12 10.49 4.34 9.77L9.77 4.34C10.49 4.12 11.23 4 12 4C17.04 4 21 7.96 21 12C21 12.77 20.88 13.51 20.66 14.23L15.23 19.66C14.51 19.88 13.77 20 13 20C7.96 20 4 16.04 4 12ZM12 6C8.68 6 6 8.68 6 12C6 15.32 8.68 18 12 18C15.32 18 18 15.32 18 12C18 8.68 15.32 6 12 6Z" fill="currentColor"/>
-                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
-                    </svg>
-                    <span>www.dlml.be</span>
-                </a>
-                <a href="mailto:midden.limburg@diabetes.be">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z" fill="currentColor"/>
-                    </svg>
-                    <span>E-mail</span>
-                </a>
-                <a href="https://www.facebook.com/p/Diabetes-Liga-Midden-Limburg-100091325418693/?locale=nl_NL" target="_blank">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM17.5 7.5H15.75C14.07 7.5 13.5 8.17 13.5 9.42V11H17L16.5 14H13.5V20H10.5V14H8V11H10.5V9.125C10.5 7.187 11.75 6 14.25 6H17.5V7.5Z" fill="currentColor"/>
-                    </svg>
-                    <span>Facebook</span>
-                </a>
-                <a href="https://www.instagram.com/diabetes_liga_midden_limburg/" target="_blank">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C9.116 2 8.788 2.01 7.703 2.05C6.618 2.09 5.86 2.276 5.251 2.502C4.385 2.827 3.653 3.328 2.99 3.991C2.328 4.654 1.827 5.385 1.502 6.251C1.276 6.86 1.09 7.618 1.05 8.703C1.01 9.788 1 10.116 1 12C1 14.884 1.01 15.862 1.05 16.297C1.09 17.382 1.276 18.14 1.502 18.749C1.827 19.615 2.328 20.347 2.99 21.01C3.653 21.672 4.385 22.173 5.251 22.498C5.86 22.724 6.618 22.91 7.703 22.95C8.788 22.99 9.116 23 12 23C14.884 23 15.862 22.99 16.297 22.95C17.382 22.91 18.14 22.724 18.749 22.498C19.615 22.173 20.347 21.672 21.01 21.01C21.672 20.347 22.173 19.615 22.498 18.749C22.724 18.14 22.91 17.382 22.95 16.297C22.99 15.862 23 14.884 23 12C23 9.116 22.99 8.788 22.95 7.703C22.91 6.618 22.724 5.86 22.498 5.251C22.173 4.385 21.672 3.653 21.01 2.99C20.347 2.328 19.615 1.827 18.749 1.502C18.14 1.276 17.382 1.09 16.297 1.05C15.862 1.01 14.884 1 12 1ZM12 4C14.73 4 15.06 4.01 16.03 4.05C16.89 4.09 17.34 4.22 17.68 4.35C18.12 4.51 18.43 4.75 18.67 5C18.91 5.24 19.15 5.55 19.31 5.99C19.44 6.33 19.57 6.78 19.61 7.64C19.65 8.61 19.66 8.94 19.66 12C19.66 15.06 19.65 15.39 19.61 16.36C19.57 17.22 19.44 17.67 19.31 18.01C19.15 18.45 18.91 18.76 18.67 19C18.43 19.24 18.12 19.48 17.68 19.64C17.34 19.77 16.89 19.9 16.03 19.94C15.06 19.98 14.73 19.99 12 19.99C9.27 19.99 8.94 19.98 7.97 19.94C7.11 19.9 6.66 19.77 6.32 19.64C5.88 19.48 5.57 19.24 5.33 19C5.09 18.76 4.85 18.45 4.69 18.01C4.56 17.67 4.43 17.22 4.39 16.36C4.35 15.39 4.34 15.06 4.34 12C4.34 8.94 4.35 8.61 4.39 7.64C4.43 6.78 4.56 6.33 4.69 5.99C4.85 5.55 5.09 5.24 5.33 5C5.57 4.76 5.88 4.52 6.32 4.36C6.66 4.23 7.11 4.1 7.97 4.06C8.94 4.02 9.27 4.01 12 4ZM12 6.81C9.69 6.81 7.81 8.69 7.81 11C7.81 13.31 9.69 15.19 12 15.19C14.31 15.19 16.19 13.31 16.19 11C16.19 8.69 14.31 6.81 12 6.81ZM12 8.81C13.2 8.81 14.19 9.8 14.19 11C14.19 12.2 13.2 13.19 12 13.19C10.8 13.19 9.81 12.2 9.81 11C9.81 9.8 10.8 8.81 12 8.81ZM18.49 5.48C18.49 4.97 18.07 4.55 17.56 4.55C17.05 4.55 16.63 4.97 16.63 5.48C16.63 5.99 17.05 6.41 17.56 6.41C18.07 6.41 18.49 5.99 18.49 5.48Z" fill="currentColor"/>
-                    </svg>
-                    <span>Instagram</span>
-                </a>
-                <a href="https://www.youtube.com/@Diabetesligamiddenlimburg" target="_blank">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21.58 7.1C21.35 6.32 20.73 5.67 19.94 5.44C18.17 4.93 12 4.93 12 4.93C12 4.93 5.83 4.93 4.06 5.44C3.27 5.67 2.65 6.32 2.42 7.1C1.91 8.87 1.91 12 1.91 12C1.91 12 1.91 15.13 2.42 16.9C2.65 17.68 3.27 18.33 4.06 18.56C5.83 19.07 12 19.07 12 19.07C12 19.07 18.17 19.07 19.94 18.56C20.73 18.33 21.35 17.68 21.58 16.9C22.09 15.13 22.09 12 22.09 12C22.09 12 22.09 8.87 21.58 7.1ZM9.95 15.14V8.86L15.22 12L9.95 15.14Z" fill="currentColor"/>
-                    </svg>
-                    <span>YouTube</span>
-                </a>
-            </div>
-        </div>
-    </section>
+<div class="social-links">
+    <div class="social-row">
+        <a href="https://www.dlml.be" target="_blank" title="www.dlml.be">
+            <img src="Wereldbol.png" alt="Website" class="social-icon" style="width:36px; height:36px;">
+        </a>
+        <a href="https://www.facebook.com/p/Diabetes-Liga-Midden-Limburg-100091325418693/?locale=nl_NL" target="_blank" title="Facebook">
+            <img src="Facebook.png" alt="Facebook" class="social-icon" style="width:36px; height:36px;">
+        </a>
+    </div>
+    <div class="social-row">
+        <a href="https://www.instagram.com/diabetes_liga_midden_limburg/" target="_blank" title="Instagram">
+            <img src="Instagram.png" alt="Instagram" class="social-icon" style="width:36px; height:36px;">
+        </a>
+        <a href="https://www.youtube.com/@Diabetesligamiddenlimburg" target="_blank" title="YouTube">
+            <img src="YouTube.png" alt="YouTube" class="social-icon" style="width:36px; height:36px;">
+        </a>
+    </div>
+</div>
 
+</div>
+</section>
     <footer>
         <div class="container">
             <p>© 2025 Diabetes Liga Afdeling Midden-Limburg. Alle rechten voorbehouden.</p>
@@ -818,7 +843,8 @@ h1, h2 {
 
             // Event listener voor de dropdown
             if (selectElement) { // Check if element exists before adding listener
-                selectElement.addEventListener('change', (event) => {
+			selectElement.addEventListener('change', (event) => {
+                    document.getElementById("interactive-steps").scrollIntoView({ behavior: "smooth" });
                     displaySteps(event.target.value);
                 });
             } else {
