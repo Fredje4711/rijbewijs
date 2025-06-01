@@ -28,7 +28,7 @@
             line-height: 1.5; /* Aangepast voor betere leesbaarheid */
             color: var(--text-dark);
             background-color: var(--bg-light);
-            font-size: 1rem; /* Basis lettergrootte */
+            font-size: 1rem; /* Basis lettergrootte (16px) */
         }
 
         *, *::before, *::after {
@@ -42,9 +42,9 @@
             line-height: 1.2;
         }
 
-        h1 { font-size: 2.2rem; /* Iets groter */ text-align: center; color: var(--text-light); margin-bottom: 0.5rem; }
-        h2 { font-size: 1.8rem; /* Iets groter */ text-align: center; margin-bottom: 0.8rem; /* Aangepast */ }
-        h3 { font-size: 1.4rem; /* Iets groter */ color: var(--primary-blue); margin-top: 1rem; /* Aangepast */ margin-bottom: 0.5rem; }
+        h1 { font-size: 2.2rem; text-align: center; color: var(--text-light); margin-bottom: 0.5rem; }
+        h2 { font-size: 1.8rem; text-align: center; margin-bottom: 0.8rem; }
+        h3 { font-size: 1.4rem; color: var(--primary-blue); margin-top: 1rem; margin-bottom: 0.5rem; }
 
         p { margin-bottom: 1rem; /* Aangepast voor meer ruimte */ }
 
@@ -61,14 +61,14 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 20px; /* Aangepast voor meer horizontale ruimte */
+            padding: 0 20px; /* Meer horizontale ruimte */
         }
 
         /* Header / Hero Section */
         .hero-section {
             background: var(--bg-gradient);
             color: var(--text-light);
-            padding: 20px 0; /* Aangepast voor meer verticale ruimte */
+            padding: 20px 0; /* Meer verticale ruimte */
             text-align: center;
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
@@ -76,9 +76,9 @@
         }
 
         .hero-section p {
-            font-size: 1rem; /* Iets groter */
-            max-width: 600px; /* Dit is specifiek voor de hero sectie */
-            margin: 0 auto 10px auto; /* Aangepast */
+            font-size: 1rem; /* Consistent met basis */
+            max-width: 600px;
+            margin: 0 auto 10px auto;
             opacity: 0.9;
         }
 
@@ -87,14 +87,14 @@
             display: inline-block;
             background: var(--button-gradient);
             color: white;
-            padding: 8px 16px; /* Aangepast */
+            padding: 8px 16px;
             border-radius: 30px;
             text-transform: uppercase;
             font-weight: 600;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-            font-size: 0.9rem; /* Iets groter */
-            margin: 5px; /* Aangepast */
+            font-size: 0.9rem;
+            margin: 5px;
         }
         .btn:hover {
             transform: translateY(-2px);
@@ -104,7 +104,7 @@
 
         /* Secties */
         section {
-            padding: 30px 0; /* Aangepast voor meer verticale ruimte */
+            padding: 30px 0; /* Meer verticale ruimte */
             margin-bottom: 0;
             background-color: var(--bg-light);
             border-bottom: 1px solid #eee;
@@ -118,21 +118,21 @@
         }
 
         .intro-section {
-            padding-bottom: 30px; /* Consistent met secties */
+            padding-bottom: 30px;
         }
         .intro-section p {
-            font-size: 1rem; /* Iets groter */
+            font-size: 1rem; /* Consistent met basis */
             /* max-width: 700px; <-- Verwijderd om volledige breedte te gebruiken */
-            margin: 0 auto 1rem auto; /* Aangepast */
+            margin: 0 auto 1rem auto;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 10px; /* Aangepast */
+            margin-bottom: 10px;
             position: relative;
         }
         .section-title h2 {
-            margin-bottom: 5px; /* Aangepast */
+            margin-bottom: 5px;
         }
         .section-title h2::after {
             content: '';
@@ -150,13 +150,13 @@
         ul {
             list-style: none;
             padding-left: 0;
-            margin-bottom: 1rem; /* Aangepast */
+            margin-bottom: 1rem;
         }
         ul li {
             position: relative;
-            padding-left: 18px; /* Aangepast */
-            margin-bottom: 5px; /* Aangepast */
-            font-size: 0.9rem; /* Iets groter */
+            padding-left: 18px;
+            margin-bottom: 5px;
+            font-size: 0.95rem; /* Aangepast */
         }
         ul li::before {
             content: '✓';
@@ -164,63 +164,62 @@
             font-weight: bold;
             position: absolute;
             left: 0;
-            top: 2px; /* Aangepast */
-            font-size: 0.95rem; /* Iets groter */
+            top: 2px;
+            font-size: 1rem; /* Aangepast */
         }
 
         .summary-box {
             background-color: var(--light-blue);
-            padding: 12px; /* Aangepast */
+            padding: 12px;
             border-radius: 10px;
-            margin-top: 15px; /* Aangepast */
+            margin-top: 15px;
             box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            font-size: 0.9rem; /* Iets groter */
-            line-height: 1.4; /* Iets compacter */
+            font-size: 0.95rem; /* Aangepast */
+            line-height: 1.4;
         }
         .summary-box p {
-            margin-bottom: 0.5rem; /* Aangepast */
+            margin-bottom: 0.5rem;
         }
         .summary-box p:last-child {
             margin-bottom: 0;
         }
-
 
         /* Interactieve Stappen sectie */
         .interactive-steps-section {
             background: linear-gradient(to right, #e0f7ff, #ffffff);
             border: 2px solid var(--primary-blue);
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 20px; /* Aangepast */
+            padding: 20px;
             border-radius: 16px;
-            margin-top: 20px; /* Aangepast */
-            margin-bottom: 20px; /* Aangepast */
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .interactive-steps-section h2 {
-            font-size: 1.7rem; /* Iets kleiner */
+            font-size: 1.7rem;
             color: var(--dark-blue);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
             text-align: center;
-            margin-top: 0.35rem; /* Aangepaste margin */
+            margin-top: 0.35rem;
         }
 
         .select-situation-box {
             text-align: center;
-            margin-bottom: 10px; /* Aangepast */
+            margin-bottom: 10px;
         }
         .select-situation-box label {
             display: block;
-            font-size: 1rem; /* Iets groter */
-            margin-bottom: 5px; /* Aangepast */
+            font-size: 1rem;
+            margin-bottom: 5px;
             font-weight: 600;
             color: var(--dark-blue);
         }
         .select-situation-box select {
-            padding: 8px 10px; /* Aangepast */
+            padding: 8px 10px;
             border-radius: 8px;
             border: 2px solid var(--primary-blue);
             background-color: white;
-            font-size: 0.95rem; /* Iets groter */
+            font-size: 0.95rem;
             color: var(--text-dark);
             width: 100%;
             max-width: 400px;
@@ -230,48 +229,48 @@
             appearance: none;
             background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2323a9e4%22%20d%3D%22M287%2069.9a14.6%2014.6%200%200%200%20-21.7%200L146.2%20190.1%2027.1%2069.9a14.6%2014.6%200%200%200%20-21.7%200%2014.6%2014.6%200%200%200%200%2021.7l130.8%20130.8a14.6%2014.6%200%200%200%2021.7%200L287%2091.6a14.6%2014.6%200%200%200%200%20-21.7z%22%2F%3E%3C%2Fsvg%3E');
             background-repeat: no-repeat;
-            background-position: right 8px top 50%; /* Aangepast */
-            background-size: 12px; /* Iets groter */
+            background-position: right 8px top 50%;
+            background-size: 12px;
             cursor: pointer;
         }
 
         #dynamic-steps-container {
             background-color: #ffffff;
-            padding: 0; /* Initieel geen padding */
-            border: none; /* Initieel geen rand */
+            padding: 0;
+            border: none;
             border-radius: 12px;
-            box-shadow: none; /* Initieel geen schaduw */
-            min-height: 0; /* Zorgt dat het leeg is */
-            margin-top: 0; /* Geen extra ruimte boven leeg vak */
-            margin-bottom: 0; /* Geen extra ruimte onder leeg vak */
-            transition: all 0.3s ease-in-out; /* Smooth animatie */
-            display: none; /* Initieel verborgen */
+            box-shadow: none;
+            min-height: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            transition: all 0.3s ease-in-out;
+            display: none;
         }
         
         /* Klasse toegevoegd door JS wanneer content geladen wordt */
         #dynamic-steps-container.show-content {
-            display: block; /* Toon het vak wanneer er content is */
-            padding: 15px; /* Aangepast */
-            border: 1px solid #cceeff; /* Rand behouden */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Schaduw behouden */
-            margin-top: 15px; /* Ruimte boven het vak wanneer het zichtbaar is */
+            display: block;
+            padding: 15px;
+            border: 1px solid #cceeff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-top: 15px;
         }
 
         #dynamic-steps-container h3 {
             margin-top: 0;
-            margin-bottom: 0.8rem; /* Aangepast */
+            margin-bottom: 0.8rem;
             color: var(--primary-blue);
-            font-size: 1.4rem; /* Iets groter */
+            font-size: 1.4rem;
         }
         #dynamic-steps-container ol {
             list-style: decimal;
-            padding-left: 20px; /* Aangepast */
+            padding-left: 20px;
             margin: 0;
         }
         #dynamic-steps-container ol li {
-            margin-bottom: 5px; /* Aangepast */
-            font-size: 0.9rem; /* Iets groter */
-            line-height: 1.4; /* Aangepast */
+            margin-bottom: 5px;
+            font-size: 0.95rem; /* Aangepast */
+            line-height: 1.4;
             padding-left: 0;
         }
         #dynamic-steps-container ol li::before {
@@ -284,28 +283,27 @@
             top: auto;
         }
         #dynamic-steps-container p {
-            margin-top: 5px; /* Aangepast */
-            font-size: 0.85rem; /* Iets groter */
+            margin-top: 5px;
+            font-size: 0.9rem; /* Aangepast */
             color: #555;
             margin-bottom: 0;
         }
         #dynamic-steps-container .tip {
             font-style: italic;
             color: var(--primary-blue);
-            margin-top: 10px; /* Aangepast */
+            margin-top: 10px;
         }
-
 
         /* FAQ Section */
         .faq-section {
             background-color: var(--section-bg-faq);
-            padding-bottom: 30px; /* Aangepast */
+            padding-bottom: 30px;
         }
 
         .faq-item {
             background-color: var(--bg-light);
             border-radius: 8px;
-            margin-bottom: 10px; /* Aangepast */
+            margin-bottom: 10px;
             box-shadow: 0 1px 5px rgba(0,0,0,0.06);
         }
 
@@ -314,8 +312,8 @@
             width: 100%;
             text-align: left;
             border: none;
-            padding: 10px 15px; /* Aangepast */
-            font-size: 0.9rem; /* Iets groter */
+            padding: 10px 15px;
+            font-size: 0.9rem;
             background-color: var(--light-blue);
             color: var(--dark-blue);
             font-weight: 600;
@@ -332,10 +330,10 @@
         .faq-question::after {
             content: '+';
             position: absolute;
-            right: 15px; /* Aangepast */
+            right: 15px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1rem; /* Iets groter */
+            font-size: 1rem;
             transition: transform 0.3s ease;
         }
 
@@ -348,29 +346,28 @@
         }
 
         .faq-answer {
-            padding: 0 15px; /* Aangepast */
+            padding: 0 15px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out, padding 0.4s ease-out;
             background-color: var(--bg-light);
-            font-size: 0.8rem; /* Iets groter */
+            font-size: 0.9rem; /* Aangepast */
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
         }
 
         .faq-item.active .faq-answer {
             max-height: 300px; /* Kan aangepast worden indien antwoorden langer zijn */
-            padding: 10px 15px; /* Aangepast */
+            padding: 10px 15px;
         }
-        .faq-answer p { margin-bottom: 0.5rem; /* Aangepast */ }
+        .faq-answer p { margin-bottom: 0.5rem; }
         .faq-answer p:last-child { margin-bottom: 0; }
-
 
         /* Call to Action onderaan */
         .cta-bottom-section {
             background: var(--bg-gradient);
             color: var(--text-light);
-            padding: 25px 0; /* Aangepast */
+            padding: 25px 0;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
@@ -378,15 +375,16 @@
         }
         .cta-bottom-section h2 {
             color: var(--text-light);
-            margin-bottom: 12px; /* Aangepast */
+            margin-bottom: 12px;
         }
         .cta-bottom-section p {
-            margin-bottom: 12px; /* Aangepast */
+            margin-bottom: 12px;
+            font-size: 1rem; /* Aangepast */
         }
         .cta-bottom-section .btn {
             background: var(--dark-blue);
-            margin: 5px; /* Aangepast */
-            font-size: 0.9rem; /* Iets groter */
+            margin: 5px;
+            font-size: 0.9rem;
         }
         .cta-bottom-section .btn:hover {
             background: var(--primary-blue);
@@ -395,11 +393,11 @@
 
         /* Social Links in CTA */
         .social-links {
-            margin-top: 20px; /* Aangepast */
+            margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px; /* VERHOOGD */
+            gap: 40px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -413,7 +411,7 @@
             display: flex;
             align-items: center;
             color: var(--text-light);
-            font-size: 0.9rem; /* Iets groter */
+            font-size: 0.9rem;
             text-decoration: none;
             white-space: nowrap;
             flex-shrink: 0;
@@ -427,12 +425,12 @@
         }
 
         .social-icon {
-            width: 32px !important; /* Groter */
-            height: 32px !important; /* Groter */
+            width: 32px !important;
+            height: 32px !important;
             display: inline-block;
             background-color: white;
             border-radius: 45%;
-            padding: 4px; /* Aangepast */
+            padding: 4px;
             margin-right: 0;
             flex-shrink: 0;
             transition: background-color 0.3s ease;
@@ -449,12 +447,12 @@
         footer {
             background-color: var(--text-dark);
             color: var(--text-light);
-            padding: 12px 0; /* Aangepast */
-            font-size: 0.75rem; /* Iets groter */
+            padding: 12px 0;
+            font-size: 0.8rem; /* Aangepast */
             text-align: center;
         }
         footer p {
-            margin-bottom: 4px; /* Aangepast */
+            margin-bottom: 4px;
         }
         footer a {
             color: var(--primary-blue);
@@ -469,19 +467,19 @@
             h1 { font-size: 2rem; }
             h2 { font-size: 1.6rem; margin-bottom: 0.7rem; }
             h3 { font-size: 1.2rem; margin-top: 0.8rem; }
-            p { font-size: 0.9rem; margin-bottom: 0.8rem; }
+            p { font-size: 0.95rem; margin-bottom: 0.8rem; } /* Aangepast */
             .btn { padding: 7px 14px; font-size: 0.85rem; }
-            .container { padding: 0 15px; /* Aangepast op kleinere schermen */ }
+            .container { padding: 0 15px; }
             section { padding: 20px 0; }
             .hero-section { padding: 15px 0; }
-            .hero-section p { font-size: 0.9rem; margin-bottom: 8px;}
-            .intro-section p { font-size: 0.9rem; margin-bottom: 0.8rem;}
+            .hero-section p { font-size: 0.95rem; margin-bottom: 8px;} /* Aangepast */
+            .intro-section p { font-size: 0.95rem; margin-bottom: 0.8rem;} /* Aangepast */
 
-            .summary-box { padding: 10px; font-size: 0.85rem; margin-top: 10px;}
+            .summary-box { padding: 10px; font-size: 0.9rem; margin-top: 10px;} /* Aangepast */
             .summary-box p { margin-bottom: 0.4rem; }
 
-            ul li { font-size: 0.85rem; padding-left: 16px; margin-bottom: 3px;}
-            ul li::before { font-size: 0.9rem; top: 1px;}
+            ul li { font-size: 0.9rem; padding-left: 16px; margin-bottom: 3px;} /* Aangepast */
+            ul li::before { font-size: 0.95rem; top: 1px;} /* Aangepast */
             
             .interactive-steps-section { padding: 15px; margin-top: 15px; margin-bottom: 15px; }
             .interactive-steps-section h2 { font-size: 1.5rem; }
@@ -490,32 +488,34 @@
             #dynamic-steps-container.show-content { padding: 12px; margin-top: 12px; }
             #dynamic-steps-container h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
             #dynamic-steps-container ol { padding-left: 18px;}
-            #dynamic-steps-container ol li { font-size: 0.85rem; margin-bottom: 4px; }
-            #dynamic-steps-container p { font-size: 0.8rem; margin-top: 4px; }
+            #dynamic-steps-container ol li { font-size: 0.9rem; margin-bottom: 4px; } /* Aangepast */
+            #dynamic-steps-container p { font-size: 0.85rem; margin-top: 4px; } /* Aangepast */
             #dynamic-steps-container .tip { margin-top: 8px;}
 
             .faq-question { padding: 9px 12px; font-size: 0.85rem; }
             .faq-question::after { font-size: 0.9rem; right: 12px; }
-            .faq-answer { padding: 0 12px; font-size: 0.75rem; }
+            .faq-answer { padding: 0 12px; font-size: 0.85rem; } /* Aangepast */
             .faq-item.active .faq-answer { padding: 9px 12px; }
 
             .cta-bottom-section { padding: 20px 0; }
             .cta-bottom-section h2 { margin-bottom: 10px; }
-            .cta-bottom-section p { margin-bottom: 10px; }
+            .cta-bottom-section p { margin-bottom: 10px; font-size: 0.95rem;} /* Aangepast */
             .cta-bottom-section .btn { font-size: 0.85rem; }
 
-            .social-links { gap: 25px; /* Aangepaste gap voor tablet-weergave */ margin-top: 15px; }
+            .social-links { gap: 25px; margin-top: 15px; }
             .social-icon { width: 28px !important; height: 28px !important; padding: 3px; }
+
+            footer { font-size: 0.75rem;} /* Aangepast */
         }
 
         @media (max-width: 480px) {
             h1 { font-size: 1.6rem; }
             h2 { font-size: 1.3rem; margin-bottom: 0.6rem; }
             h3 { font-size: 1.1rem; margin-top: 0.7rem; }
-            p { font-size: 0.8rem; margin-bottom: 0.7rem; }
+            p { font-size: 0.9rem; margin-bottom: 0.7rem; } /* Aangepast */
             .btn {
                 display: block;
-                width: calc(100% - 20px); /* Account for 10px container padding */
+                width: calc(100% - 20px);
                 margin: 5px auto;
                 padding: 6px 12px;
                 font-size: 0.8rem;
@@ -524,15 +524,15 @@
                 width: auto;
                 display: inline-block;
             }
-            .container { padding: 0 10px; /* Nog compacter op zeer kleine schermen */ }
+            .container { padding: 0 10px; }
             section { padding: 15px 0; }
-            .hero-section p { font-size: 0.85rem; margin-bottom: 6px;}
+            .hero-section p { font-size: 0.9rem; margin-bottom: 6px;} /* Aangepast */
 
-            .summary-box { font-size: 0.8rem; padding: 8px; margin-top: 8px;}
+            .summary-box { font-size: 0.85rem; padding: 8px; margin-top: 8px;} /* Aangepast */
             .summary-box p { margin-bottom: 0.3rem;}
 
-            ul li { font-size: 0.8rem; padding-left: 14px; margin-bottom: 2px;}
-            ul li::before { font-size: 0.85rem; top: 0px;}
+            ul li { font-size: 0.85rem; padding-left: 14px; margin-bottom: 2px;} /* Aangepast */
+            ul li::before { font-size: 0.9rem; top: 0px;} /* Aangepast */
 
             .interactive-steps-section { padding: 12px; margin-top: 12px; margin-bottom: 12px; }
             .interactive-steps-section h2 { font-size: 1.3rem; }
@@ -541,23 +541,22 @@
             #dynamic-steps-container.show-content { padding: 10px; margin-top: 10px; }
             #dynamic-steps-container h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
             #dynamic-steps-container ol { padding-left: 16px;}
-            #dynamic-steps-container ol li { font-size: 0.8rem; margin-bottom: 3px; }
-            #dynamic-steps-container p { font-size: 0.75rem; margin-top: 3px; }
+            #dynamic-steps-container ol li { font-size: 0.85rem; margin-bottom: 3px; } /* Aangepast */
+            #dynamic-steps-container p { font-size: 0.8rem; margin-top: 3px; } /* Aangepast */
             #dynamic-steps-container .tip { margin-top: 6px;}
 
-
             .faq-question { font-size: 0.8rem; padding: 7px 10px;}
-            .faq-answer { font-size: 0.7rem; padding: 0 10px;}
+            .faq-answer { font-size: 0.8rem; padding: 0 10px;} /* Aangepast */
             .faq-item.active .faq-answer { padding: 7px 10px; }
             
             .cta-bottom-section { padding: 18px 0; }
             .cta-bottom-section h2 { margin-bottom: 8px; }
-            .cta-bottom-section p { margin-bottom: 8px; }
+            .cta-bottom-section p { margin-bottom: 8px; font-size: 0.9rem;} /* Aangepast */
             .cta-bottom-section .btn { font-size: 0.8rem; }
 
-            footer { font-size: 0.7rem; padding: 10px 0;}
+            footer { font-size: 0.7rem; padding: 10px 0;} /* Aangepast */
             
-            .social-links { gap: 15px; /* Nog compacter op zeer kleine schermen */ margin-top: 10px; }
+            .social-links { gap: 15px; margin-top: 10px; }
             .social-icon { width: 24px !important; height: 24px !important; padding: 2px; }
         }
     
